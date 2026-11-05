@@ -1,0 +1,79 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package problem2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author PAN_CPE113
+ */
+public class PROBLEM2 {
+   
+
+     public class ElectricityBillCalculator {
+         
+     }
+    public static double calculateConsumptionCharge(
+            double consumption, double rate) {
+
+        return consumption * rate;
+    }
+
+    
+    public static double calculateAdditionalCharge(
+            double consumptionCharge, double percentage) {
+
+        return consumptionCharge * (percentage / 100);
+    }
+
+   
+    public static double calculateTotalBill(
+            double consumptionCharge, double additionalCharge) {
+
+        return consumptionCharge + additionalCharge;
+    }
+
+    public static void main(String[] args) {
+
+        try (Scanner input = new Scanner(System.in)) {
+           
+            System.out.print("Enter electricity consumption (kWh): ");
+            double consumption = input.nextDouble();
+            
+          
+            System.out.print("Enter rate per kWh: ");
+            double rate = input.nextDouble();
+            
+           
+            System.out.print("Enter additional charge percentage: ");
+            double percentage = input.nextDouble();
+            
+       
+            double consumptionCharge =
+                    calculateConsumptionCharge(consumption, rate);
+            
+            double additionalCharge =
+                    calculateAdditionalCharge(consumptionCharge, percentage);
+            
+            double totalBill =
+                    calculateTotalBill(consumptionCharge, additionalCharge);
+            
+           
+            System.out.println("\n===== ELECTRICITY BILL =====");
+            System.out.printf("Consumption Charge: P%.2f%n",
+                    consumptionCharge);
+            
+            System.out.printf("Additional Charge (%.0f%%): P%.2f%n",
+                    percentage, additionalCharge);
+            
+            System.out.printf("Total Electricity Bill: P%.2f%n",
+                    totalBill);
+        }
+    }
+}
+    
+    
+
